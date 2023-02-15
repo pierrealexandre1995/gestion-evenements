@@ -6,9 +6,18 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Post;
 use App\Repository\InscriptionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Controller\InscriptionController;
 
 #[ORM\Entity(repositoryClass: InscriptionRepository::class)]
-#[ApiResource]
+#[ApiResource
+(operations: [
+    new Post(
+        name: 'faire_inscription', 
+        uriTemplate: '/inscription/faire_inscription', 
+        controller: InscriptionController::class,
+        write:true
+    )
+])]
 #[Post(normalizationContext: ['groups' => ['post']])]
 class Inscription
 {
