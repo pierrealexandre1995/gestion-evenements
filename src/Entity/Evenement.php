@@ -2,11 +2,16 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\EvenementRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: EvenementRepository::class)]
+#[ApiResource]
 class Evenement
 {
     #[ORM\Id]
@@ -23,8 +28,24 @@ class Evenement
     #[ORM\Column]
     private ?int $nombre_participant_max = null;
 
-    #[ORM\Column]
-    private ?int $nombre_inscrit = null;
+    #[ORM\Column(options:['default'=>0])]
+    private ?int $nombre_inscrit = 0;
+
+    #[ORM\Column(type:"datetime_immutable", options:['default'=>'CURRENT_TIMESTAMP'])]
+    private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column(length: 150)]
+    private ?string $nom_evenement = null;
+
+    #[ORM\OneToMany(mappedBy: 'evenement', targetEntity: Inscription::class, orphanRemoval: true)]
+    private Collection $inscriptions;
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTimeImmutable();
+        $this->nombre_inscrit = 0;
+        $this->inscriptions = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -75,6 +96,60 @@ class Evenement
     public function setNombreInscrit(int $nombre_inscrit): self
     {
         $this->nombre_inscrit = $nombre_inscrit;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getNomEvenement(): ?string
+    {
+        return $this->nom_evenement;
+    }
+
+    public function setNomEvenement(string $nom_evenement): self
+    {
+        $this->nom_evenement = $nom_evenement;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Inscription>
+     */
+    public function getInscriptions(): Collection
+    {
+        return $this->inscriptions;
+    }
+
+    public function addInscription(Inscription $inscription): self
+    {
+        if (!$this->inscriptions->contains($inscription)) {
+            $this->inscriptions->add($inscription);
+            $inscription->setEvenement($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInscription(Inscription $inscription): self
+    {
+        if ($this->inscriptions->removeElement($inscription)) {
+            // set the owning side to null (unless already changed)
+            if ($inscription->getEvenement() === $this) {
+                $inscription->setEvenement(null);
+            }
+        }
 
         return $this;
     }
