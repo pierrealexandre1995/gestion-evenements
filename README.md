@@ -1,21 +1,33 @@
-Ce projet est un projet pour un test de Bocasay
-Auteur : Rakotonindrina Pierre Alexandre
+# Gestion Evènements
 
-1 - Technologies utilisés : 
-        - Langage : PHP 8.1.10
-        - Framework : Symfony 6.1.12
-        - Base de données : PostgreSQL 15.2
 
-2 - Installation : lancer les commandes
-        - Modifier le mot de passe de la base de données dans le ficher .env (Actuel mot de passe : root)
-        - Créer la base de données avec la commande : php bin/console doctrine:database:create
-        - Créer les tables de la base de données : php bin/console doctrine:migrations:migrate
-        - Aller dans le repertoire contenant le projet
-        - Lancer : `symfony serve` ou `php -S localhost:8000 -t public`
-        - Puis ouvrir votre navigateur et aller dans http://localhost:8000/api pour voir le dashboard de l'API
+## 1 - Technologies utilisés :
 
-4 - Les fonctionnalités
-        - CRUD Evenement :
+ - [Langage : PHP 8.1.10](https://www.php.net/releases/8.1/en.php)
+ - [Framework : Symfony 6.1.12](https://symfony.com/doc/current/index.html)
+ - [Base de données : PostgreSQL 15.2](https://www.postgresql.org/docs/current/index.html)
+
+
+## 2 - Installation : lancer les commandes
+
+ - Modifier le mot de passe de la base de données dans le ficher .env (Actuel mot de passe : root)
+ - Créer la base de données avec la commande : php bin/console `doctrine:database:create`
+ - Créer les tables de la base de données : php bin/console `doctrine:migrations:migrate`
+ - Aller dans le repertoire contenant le projet
+ - Lancer : `symfony serve` ou `php -S localhost:8000 -t public`
+ - Puis ouvrir votre navigateur et aller dans [http://localhost:8000/api](http://localhost:8000/api) pour voir le dashboard de l'api
+
+ 
+
+
+
+
+## 3 - Documentation
+
+[Documentation](https://linktodocumentation)
+
+CRUD Evenement et Ajout inscrition à un evenenment :
+         
          - Lister tout : http://localhost:8000/api/evenement/ GET
          - Voir un évènement : http://localhost:8000/api/evenement/{id} GET
          - Ajouter évènement : http://localhost:8000/api/evenement/ POST 
@@ -44,6 +56,10 @@ Auteur : Rakotonindrina Pierre Alexandre
                         "id_evenement": string,
                 }
 
-5 - Outils utilisé : 
-        Doctrine 2.0
-        API Platform pour le rest
+## 4 - Outils utilisé
+ - Doctrine
+ - API Platform
+## 5 - Authors
+
+- [@rakotonindrinapierre](https://www.github.com/rakotonindrinapierre)
+
