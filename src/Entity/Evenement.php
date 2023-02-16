@@ -7,28 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use App\Repository\EvenementRepository;
 use Doctrine\DBAL\Types\Types;
-use ApiPlatform\Metadata\Post;
-use ApiPlatform\Metadata\Get;
-use ApiPlatform\Metadata\Put;
 use ApiPlatform\Metadata\Delete;
 use Doctrine\ORM\Mapping as ORM;
 use App\Controller\InscriptionController;
 
 #[ORM\Entity(repositoryClass: EvenementRepository::class)]
-#[ApiResource
-    (operations: [
-        new Post(
-            name: 'faire_inscription', 
-            uriTemplate: '/evenement/faire_inscription', 
-            controller: InscriptionController::class,
-            write:true
-        )
-    ])
-]
-#[Post]
-#[Get]
-#[Put]
-#[Delete]
+#[ApiResource]
 class Evenement
 {
     #[ORM\Id]

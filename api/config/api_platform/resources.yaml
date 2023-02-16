@@ -1,9 +1,0 @@
-resources:
-    App\Entity\Book:
-        operations:
-            ApiPlatform\Metadata\Get: ~
-            post_publication:
-                class: ApiPlatform\Metadata\Post
-                method: POST
-                uriTemplate: /inscription/faire_inscription
-                controller: App\Controller\InscriptionController

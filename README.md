@@ -47,19 +47,28 @@ CRUD Evenement et Ajout inscrition à un evenenment :
          - Voir un évènement : http://localhost:8000/api/evenement/{id} DELETE
 
          - Faire Inscription :
-          - Ajouter évènement : http://localhost:8000/api/evenement/faire_inscription POST 
+          - Ajouter une personne à un évènement : http://localhost:8000/api/evenement/faire_inscription POST 
            data:{
                         "nom": string,
                         "prenom": string,
                         "email": string,
                         "telephone": string,
-                        "id_evenement": string,
+                        "evenement": identifiant de l'evenement
                 }
+           - Liste des persones : http://localhost:8000/apifos/inscriptions GET
+
+
+Remarque = Les entrés inputs POST et PUT doivent etre en format [JSON](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Objects/JSON)
 
 ## 4 - Outils utilisé
- - Doctrine
- - API Platform
+ - [Doctrine](https://symfony.com/doc/current/doctrine.html)
+ - [API Platform](https://api-platform.com/)
+ - [FOSRestBundle](https://github.com/FriendsOfSymfony/FOSRestBundle)
 ## 5 - Authors
 
 - [@rakotonindrinapierre](https://www.github.com/rakotonindrinapierre)
+
+## 5 - Quelques Captures d'écrans
+
+fichiers : `app/screenshots`
 
