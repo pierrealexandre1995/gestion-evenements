@@ -37,8 +37,8 @@ CRUD Evenement et Ajout inscrition à un evenenment :
                 }
          - Modifer évènement : http://localhost:8000/api/evenement/{id} PUT 
            data:{
-                        "dateDeDebut": date,
-                        "dateDeFin": date,
+                        "dateDeDebut": date, ex : 2023-02-20T06:14:21.342Z
+                        "dateDeFin": date, ex : 2023-02-20T06:14:21.342Z
                         "nombreParticipantMax": int,
                         "nombreInscrit": int
                 }
@@ -57,6 +57,7 @@ CRUD Evenement et Ajout inscrition à un evenenment :
 
 
 Remarque = Les entrés inputs POST et PUT doivent etre en format [JSON](https://developer.mozilla.org/fr/docs/Learn/JavaScript/Objects/JSON)
+Les dates doivent être de cette format : 2023-02-20T06:14:21.342Z
 
 ## 4 - Outils utilisé
  - [Doctrine](https://symfony.com/doc/current/doctrine.html)
@@ -92,4 +93,9 @@ Erreur inscription car l'evenement est complet
 ![Erreur inscription car l'evenement est complet](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/6.png)
 
 
+
+## 7 - Perspectives et Améliorations :
+
+ - Format et Manipulation des dates
+ - Installer Docker pour l'installation automatique du projet
 
