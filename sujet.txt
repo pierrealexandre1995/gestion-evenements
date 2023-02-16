@@ -1,0 +1,24 @@
+Sujet :
+Fournir une api pour répondre à une gestion d'événements.
+
+
+Explication :
+On souhaite faire une gestion d'événements pour réaliser des réservations en ligne.
+Un événement est défini par une date de début et une date de fin.
+Un événement est limité par un nombre d'inscrits.
+
+Une inscription est composée d'un nom, prénom, email et d'un numéro de téléphone.
+
+
+
+L'api REST devra permettre de créer un événement, modifier un événement et supprimer un événement.
+
+
+
+Elle devra également permettre l'inscription en vérifiant que le nombre d'inscrits sur l'événement n'est pas atteint.
+
+
+L'api devra être développée avec Symfony, de préférence avec Postgresql et doctrine.
+
+
+Je vous laisse nous la fournir par le biais d'un repo public github.
