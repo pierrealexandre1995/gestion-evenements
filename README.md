@@ -68,22 +68,29 @@ Remarque = Les entrés inputs POST et PUT doivent etre en format [JSON](https://
 
 - [@rakotonindrinapierre](https://www.github.com/rakotonindrinapierre)
 
+Quelques bugs à reporter, n'hesitez pas à me contacter : [rakotonindrinapierre@gmail.com](mailto:rakotonindrinapierre@gmail.com)
+
 ## 6 - Outils IDE et Tests
 
  - Visual Studio Code
  - PostMan
 ## 7 - Quelques Captures d'écrans
 
-fichiers : `app/screenshots`
-
+Liste des evenements
 ![Liste des evenements](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/1.png)
 
+
+Evenements ajouter à la base de données
 ![Evenements ajouter à la base de données](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/2.png)
 
 ![Faire Inscription](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/4.png)
 
+
+Liste des inscriptions
 ![Liste des inscriptions](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/5.png)
 
+
+Erreur inscription car l'evenement est complet
 ![Erreur inscription car l'evenement est complet](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/6.png)
 
 
