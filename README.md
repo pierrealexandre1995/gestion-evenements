@@ -76,15 +76,15 @@ Remarque = Les entrés inputs POST et PUT doivent etre en format [JSON](https://
 
 fichiers : `app/screenshots`
 
-![Liste des evenements](https://github.com/pierrealexandre1995/gestion-evenements/blob/main/screenshots/1.jpg?raw=true)
+![Liste des evenements](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/1.png)
 
-![Evenements ajouter à la base de données](https://github.com/pierrealexandre1995/gestion-evenements/blob/main/screenshots/2.jpg?raw=true)
+![Evenements ajouter à la base de données](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/2.png)
 
-![Faire Inscription](https://github.com/pierrealexandre1995/gestion-evenements/blob/main/screenshots/4.jpg?raw=true)
+![Faire Inscription](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/4.png)
 
-![Liste des inscriptions](https://github.com/pierrealexandre1995/gestion-evenements/blob/main/screenshots/5.jpg?raw=true)
+![Liste des inscriptions](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/5.png)
 
-![Erreur inscription car l'evenement est complet](https://github.com/pierrealexandre1995/gestion-evenements/blob/main/screenshots/6.jpg?raw=true)
+![Erreur inscription car l'evenement est complet](https://raw.githubusercontent.com/pierrealexandre1995/gestion-evenements/main/screenshots/6.png)
 
 
 
