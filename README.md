@@ -24,8 +24,6 @@
 
 ## 3 - Documentation
 
-[Documentation](https://linktodocumentation)
-
 CRUD Evenement et Ajout inscrition à un evenenment :
          
          - Lister tout : http://localhost:8000/api/evenement/ GET
