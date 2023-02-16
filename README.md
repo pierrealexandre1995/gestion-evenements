@@ -35,7 +35,7 @@ Auteur : Rakotonindrina Pierre Alexandre
          - Voir un évènement : http://localhost:8000/api/evenement/{id} DELETE
 
          - Faire Inscription :
-          - Ajouter évènement : http://localhost:8000/api/inscription/ POST 
+          - Ajouter évènement : http://localhost:8000/api/evenement/faire_inscription POST 
            data:{
                         "nom": string,
                         "prenom": string,

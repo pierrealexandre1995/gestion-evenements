@@ -5,13 +5,30 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use Symfony\Component\Serializer\Annotation\Groups;
 use App\Repository\EvenementRepository;
 use Doctrine\DBAL\Types\Types;
+use ApiPlatform\Metadata\Post;
+use ApiPlatform\Metadata\Get;
+use ApiPlatform\Metadata\Put;
+use ApiPlatform\Metadata\Delete;
 use Doctrine\ORM\Mapping as ORM;
+use App\Controller\InscriptionController;
 
 #[ORM\Entity(repositoryClass: EvenementRepository::class)]
-#[ApiResource]
+#[ApiResource
+    (operations: [
+        new Post(
+            name: 'faire_inscription', 
+            uriTemplate: '/evenement/faire_inscription', 
+            controller: InscriptionController::class,
+            write:true
+        )
+    ])
+]
+#[Post]
+#[Get]
+#[Put]
+#[Delete]
 class Evenement
 {
     #[ORM\Id]
@@ -37,7 +54,7 @@ class Evenement
     #[ORM\Column(length: 150)]
     private ?string $nom_evenement = null;
 
-    #[ORM\OneToMany(mappedBy: 'evenement', targetEntity: Inscription::class, orphanRemoval: true)]
+    #[ORM\OneToMany(mappedBy: 'evenement', targetEntity: Inscription::class)]
     private Collection $inscriptions;
 
     public function __construct()
@@ -153,4 +170,5 @@ class Evenement
 
         return $this;
     }
+
 }

@@ -2,23 +2,10 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Metadata\ApiResource;
-use ApiPlatform\Metadata\Post;
 use App\Repository\InscriptionRepository;
 use Doctrine\ORM\Mapping as ORM;
-use App\Controller\InscriptionController;
 
 #[ORM\Entity(repositoryClass: InscriptionRepository::class)]
-#[ApiResource
-(operations: [
-    new Post(
-        name: 'faire_inscription', 
-        uriTemplate: '/inscription/faire_inscription', 
-        controller: InscriptionController::class,
-        write:true
-    )
-])]
-#[Post(normalizationContext: ['groups' => ['post']])]
 class Inscription
 {
     #[ORM\Id]
@@ -41,7 +28,7 @@ class Inscription
     #[ORM\Column(type:"datetime_immutable", options:['default'=>'CURRENT_TIMESTAMP'])]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\ManyToOne(inversedBy: 'inscriptions')]
+    #[ORM\ManyToOne(targetEntity: Evenement::class,inversedBy: 'inscriptions')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Evenement $evenement = null;
 
@@ -126,4 +113,5 @@ class Inscription
 
         return $this;
     }
+
 }

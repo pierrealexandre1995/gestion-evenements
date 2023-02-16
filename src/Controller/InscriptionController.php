@@ -11,11 +11,11 @@ use Symfony\Component\HttpKernel\Attribute\AsController;
 class InscriptionController extends AbstractController{
     public function __invoke(Inscription $data): Inscription
     {
+        echo "here";die;
         $data->setNom("Pierre");
         $data->setPrenom("Alexandre");
         $data->setEmail("mail@mail.mail");
         $data->setTelephone("123456789");
-        $data->setEvenement(null);
         return $data;
     }
 }
